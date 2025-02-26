@@ -1,0 +1,48 @@
+# Node modules directory
+/node_modules/
+
+# Logs
+logs
+*.log
+*.log.*
+
+# Dependency directories
+bower_components/
+
+# Build output directories
+/dist/
+/build/
+
+# npm package-lock and yarn lock files
+package-lock.json
+yarn.lock
+
+# dotenv environment variable files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# IDE/Editor folders
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# npm debug log
+npm-debug.log*
+
+# Build artifacts
+*.tgz
+*.tar.gz
+
+# Test coverage reports
+coverage/
+*.lcov
+
+# Prettier and editor config files
+.prettierignore
+.editorconfig
