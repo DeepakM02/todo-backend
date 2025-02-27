@@ -1,47 +1,43 @@
-# Task Management App (React Native with Expo)
+# Task Management API
 
-This is a task management app built using **React Native**, **Expo**, **Redux Toolkit**, **React Native Paper**, and **TypeScript**. The app includes features for authentication (signup/login), task management (view, add, edit, delete tasks), and token-based authentication using **JWT**.
+A backend API built with Node.js, Express.js, and MongoDB for managing user tasks. It includes user authentication with JWT and allows users to create, view, update, and delete tasks aling with login and signup. 
 
-## Features
+## Tech Stack:
+- **Express.js** - Backend framework
+- **MongoDB** & **Mongoose** - Database & ODM
+- **bcrypt.js** - Password hashing
+- **jsonwebtoken (JWT)** - Authentication
+- **CORS** & **Express JSON Middleware** - Request handling
 
-### Authentication
-- **Signup Screen**: Users can register with name, email, and password.
-- **Login Screen**: Users can log in using their email and password. Token-based authentication is implemented using **JWT** stored in **AsyncStorage**.
-- **Logout**: A logout button is available that clears the stored JWT token and navigates the user back to the Login screen.
+## API Endpoints
 
-### Task Management
-- **Home Screen**: Displays tasks fetched from the backend. Includes pull-to-refresh functionality.
-- **Add Task Screen**: Allows users to create a new task with a title and description.
-- **Task Details Screen**: Displays detailed information about a task, and allows users to edit or delete tasks.
+### Authentication (JWT-based)
+- **POST /auth/signup**: Register a new user.
+- **POST /auth/login**: Authenticate user and return JWT.
 
-## Tech Stack & Tools
+### Task Management (Protected Routes - Requires JWT)
+- **POST /tasks**: Create a new task.
+- **GET /tasks**: Get all tasks for the logged-in user.
+- **GET /tasks/:id**: Get a specific task.
+- **PUT /tasks/:id**: Update a task.
+- **DELETE /tasks/:id**: Delete a task.
+- **GET /users**: Fetch all users (requires JWT).
 
-- **React Native** with **Expo**
-- **Redux Toolkit** for state management
-- **React Navigation** (Stack Navigator) for navigating between screens
-- **AsyncStorage** for storing JWT tokens
-- **React Native Paper** or **NativeBase** for UI components
-- **TypeScript** for type safety
+## Setup
 
-## Setup & Installation
-
-1. **Clone the repository**:
+1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd <project-folder>
+   https://github.com/DeepakM02/todo-backend.git
    ```
-2. **Install dependencies**:
-Run the following command to install all the necessary dependencies:
- ```bash
+2. Install dependencies:
+   ```bash
    npm install
    ```
-
-3. **Start the App**:
-After installing dependencies, you can start the app with:
- ```bash
+3. Configure environment variables (e.g., `JWT_SECRET`, `MONGODB_URI`).
+4. Start the server:
+   ```bash
    npm start
    ```
-This will start the development server, and you can open the app on your simulator or mobile device using the Expo Go app.
 
-## Folder Structure
-Expo file based routing is implemented where dynamic routing is also supported. 
+## License
+MIT License
